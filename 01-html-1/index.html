@@ -1,0 +1,2204 @@
+<!doctype html>
+< lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Html-lercture part 1</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="../css/reveal.css">
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/theme/night.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="../lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? '../css/print/pdf.css' : '../css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <script type="text/javascript"
+            src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section style="font-size: 70px;">
+            <div>
+                <h1 class="animated">HTML</h1>
+                <h4 class="animated">Часть I</h4>
+
+                <p style="text-align: center;">
+                    <small class=" animated"><span style="color: red">К</span>увалдин Артем.</small><br>
+                    <small class=" animated"><span style="color: red">Р</span>азработчик интерфейсов.</small>
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="animated">Сначала был текст...</h2>
+					<pre>
+						<code class="nohighlight">
+Log entry: sol 7 Ok, I’ve had a good night’s sleep, and things don’t seem as
+hopeless as they did yesterday. Today I took stock of supplies, and did a quick
+EVA to check up on the external equipment. Here’s my situation: The surface
+mission was supposed to be 31 days. For redundancy, the supply probes had enough
+food to last the whole crew 56 days. That way if one or two probes had problems,
+we'd still have enough food to complete the mission. We were six days in when all
+hell broke loose, so that leaves enough food to feed six people for 50 days. I’m
+just one guy, so it’ll last me 300 days. And that’s if I don’t ration it. So I’ve
+got a fair bit of time.
+                        </code>
+					</pre>
+        </section>
+        <section>
+            <h2>Но людям все мало...</h2>
+            <ul>
+                <li class="fragment">Мы хотим видеть его структуру:
+                    <ul>
+                        <li>заголовки</li>
+                        <li>списки</li>
+                        <li>таблицы</li>
+                    </ul>
+                </li>
+                <li class="fragment">Мы хотим сопровождать его
+                    <ul>
+                        <li>ссылками</li>
+                        <li>картинками</li>
+                        <li class="fragment">картинками с котиками (^._.^)ﾉ</li>
+                    </ul>
+                <li class="fragment">Мы хотим легко находить его среди миллионов других текстов</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Возможностей текста не хватает</h2>
+					<pre>
+						<code class="nohighlight">
+LOG ENTRY: SOL 7
+
+Ok, I’ve had a good night’s sleep, and things don’t seem as hopeless as they
+did yesterday.
+
+Today I took stock of supplies, and did a quick EVA to check up on the external
+equipment. Here’s my situation:
+
+The surface mission was supposed to be 31 days. For redundancy, the supply
+probes had enough food to last the whole crew 56 days. That way if one or two
+probes had problems, we'd still have enough food to complete the mission.
+
+,--.   ,--.  ,---.  ,------.  ,---.
+|   `.'   | /  O  \ |  .--. ''   .-'
+|  |'.'|  ||  .-.  ||  '--'.'`.  `-.
+|  |   |  ||  | |  ||  |\  \ .-'    |
+`--'   `--'`--' `--'`--' '--'`-----'
+                        </code>
+					</pre>
+        </section>
+        <section>
+            <h2>Языки разметки</h2>
+
+            <p>Они позволяют нам дополнять простой текст метаданными – «данными о данных», или «данными о тексте» в нашем случае.</p>
+        </section>
+        <section>
+            <h2>MathML</h2>
+            <p style="font-size: 60px;">x = (-b ± √(b^2 - 4ac)) / 2a</p>
+        </section>
+        <section data-transition="none">
+            <h2>MathML</h2>
+            <pre class="xml m">
+            <!--<code>-->
+&#x3C;math xmlns=&#x22;https://www.w3.org/1998/Math/MathML&#x22;&#x3E;
+    &#x3C;mi&#x3E;x&#x3C;/mi&#x3E;&#x3C;mo&#x3E;=&#x3C;/mo&#x3E;
+    <mark>&#x3C;mfrac&#x3E;</mark>
+        &#x3C;mrow&#x3E;
+            &#x3C;mo&#x3E;&#x2212;&#x3C;/mo&#x3E;&#x3C;mi&#x3E;b&#x3C;/mi&#x3E;&#x3C;mo&#x3E;&#xB1;&#x3C;/mo&#x3E;
+            &#x3C;msqrt&#x3E;
+                &#x3C;msup&#x3E;
+                    &#x3C;mi&#x3E;b&#x3C;/mi&#x3E;&#x3C;mn&#x3E;2&#x3C;/mn&#x3E;
+                &#x3C;/msup&#x3E;
+                &#x3C;mo&#x3E;&#x2212;&#x3C;/mo&#x3E;&#x3C;mn&#x3E;4&#x3C;/mn&#x3E;&#x3C;mi&#x3E;a&#x3C;/mi&#x3E;&#x3C;mi&#x3E;c&#x3C;/mi&#x3E;
+            &#x3C;/msqrt&#x3E;
+        &#x3C;/mrow&#x3E;
+        &#x3C;mrow&#x3E;
+            &#x3C;mn&#x3E;2&#x3C;/mn&#x3E;&#x3C;mi&#x3E;a&#x3C;/mi&#x3E;
+        &#x3C;/mrow&#x3E;<mark>&#x3C;/mfrac&#x3E;</mark>&#x3C;/math&#x3E;
+            <!--</code>-->
+            </pre>
+        </section>
+        <section data-transition="none">
+            <h2>MathML</h2>
+            <pre class="xml m">
+            <!--<code>-->
+&#x3C;math xmlns=&#x22;https://www.w3.org/1998/Math/MathML&#x22;&#x3E;
+    &#x3C;mi&#x3E;x&#x3C;/mi&#x3E;&#x3C;mo&#x3E;=&#x3C;/mo&#x3E;
+    &#x3C;mfrac&#x3E;
+        &#x3C;mrow&#x3E;
+            &#x3C;mo&#x3E;&#x2212;&#x3C;/mo&#x3E;&#x3C;mi&#x3E;b&#x3C;/mi&#x3E;&#x3C;mo&#x3E;&#xB1;&#x3C;/mo&#x3E;
+            <mark>&#x3C;msqrt&#x3E;</mark>
+                &#x3C;msup&#x3E;
+                    &#x3C;mi&#x3E;b&#x3C;/mi&#x3E;&#x3C;mn&#x3E;2&#x3C;/mn&#x3E;
+                &#x3C;/msup&#x3E;
+                &#x3C;mo&#x3E;&#x2212;&#x3C;/mo&#x3E;&#x3C;mn&#x3E;4&#x3C;/mn&#x3E;&#x3C;mi&#x3E;a&#x3C;/mi&#x3E;&#x3C;mi&#x3E;c&#x3C;/mi&#x3E;
+            <mark>&#x3C;/msqrt&#x3E;</mark>
+        &#x3C;/mrow&#x3E;
+        &#x3C;mrow&#x3E;
+            &#x3C;mn&#x3E;2&#x3C;/mn&#x3E;&#x3C;mi&#x3E;a&#x3C;/mi&#x3E;
+        &#x3C;/mrow&#x3E;&#x3C;/mfrac&#x3E;&#x3C;/math&#x3E;
+            <!--</code>-->
+            </pre>
+        </section>
+        <section>
+            <h2>MathML</h2>
+<math style="font-size: 70px;" xmlns="https://www.w3.org/1998/Math/MathML">
+    <mi>x</mi>
+    <mo>=</mo>
+    <mfrac>
+        <mrow>
+            <mo>−</mo>
+            <mi>b</mi>
+            <mo>±</mo>
+            <msqrt>
+                <msup>
+                    <mi>b</mi>
+                    <mn>2</mn>
+                </msup>
+                <mo>−</mo>
+                <mn>4</mn>
+                <mi>a</mi>
+                <mi>c</mi>
+            </msqrt>
+        </mrow>
+        <mrow>
+            <mn>2</mn>
+            <mi>a</mi>
+        </mrow>
+    </mfrac>
+</math>
+        </section>
+        <section>
+            <h2>SVG</h2>
+                <pre class="xml m">
+                    <code>
+<svg width="99" height="99" xmlns="https://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="50" height="50" fill="blue"/>
+    <circle cx="50" cy="50" r="25" fill="red"/>
+</svg>
+                    </code>
+            </pre>
+            <svg width="200" height="200" xmlns="https://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="100" height="100" fill="blue"/>
+                <circle cx="100" cy="100" r="50" fill="red"/>
+            </svg>
+        </section>
+        <section data-background="img/what-is-html.jpg" data-background-transition="zoom">
+        </section>
+        <section>
+            <h2 class="" style="text-shadow: 1px 1px 2px rgba(0,0,0, 1)">
+                HTML (HyperText Markup Language) - язык разметки документов, предназначенных для обмена ими в Интернете
+            </h2>
+        </section>
+        <section>
+            <h2>HTML</h2>
+            <pre class="html l">
+                <code>
+<meta name="keywords" content="Молоко, Хлеб, Яблоки">
+
+<h1>Список покупок</h1>
+
+<ul>
+    <li>Молоко</li>
+    <li>Хлеб</li>
+    <li>Яблоки</li>
+    <li>Audi TT</li>
+</ul>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+<meta name="keywords" content="Молоко, Хлеб, Яблоки">
+
+<h1>Список покупок</h1>
+
+<ul style="font-size: 60px;">
+    <li>Молоко</li>
+    <li>Хлеб</li>
+    <li>Яблоки</li>
+    <li>Audi TT</li>
+</ul>
+        </section>
+        <section data-background-image="img/cern-ii.jpg">
+
+        </section>
+        <section data-background="img/Tim-Berners-Lee.jpg">
+            <h2 style="text-shadow: 1px 1px 2px rgba(0,0,0, 1)">1989 год</h2>
+            <!--1989 год Ученый по имени Тим бернерс-ли, который работал в CERN(Европейском совете по ядерным исследованиям)
+             работал над внетренней системой обмена научной документацией, предложил концепциюпаутыни документов, т. е. с возможностью переходить
+             с одного документа к другому по ссылкам. В первой версии использовалось 18 элементов (11 используются и сейчас) самый важный элемент
+             (ради чего все и началось) это элемент ссылки-->
+            <!--Примерно в 1993 году параллельно с Тимом разрабатывал спецификацию Дейв Рэгет
+            котоый разаработал элементы для разметки таблиц и форм-->
+        </section>
+        <section>
+            <h2>Гипертекст</h2>
+            <img src="img/anchor.jpg" width="800">
+        </section>
+        <section>
+            <h2>1991 год, первое описание HTML</h2>
+            <h2>1993 год, HTML internet Draft</h2>
+            <h2>1995 год, HTML 2.0</h2>
+        </section>
+        <!--1997  Тим создал организацию под названием W3C (World Wide Web Consortium)
+        по разработке спецификаций в том числе и HTML
+        к разработке активно привлекались крупные компании такие как microsoft netscape
+        КТО значет кто такие Netscape?-->
+        <section>
+            <h2>1997 год</h2>
+            <img src="img/4fc7c62eb312d3.01670533.png" style="background: #fff" width="500px">
+            <h2>(World Wide Web Consortium)</h2>
+        </section>
+        <section>
+            <h2>1997 год, HTML 3.0</h2>
+            <h2>1998 год, HTML 4.0</h2>
+            <h2>2000 год, XHTML 1.0</h2>
+            <h2>2001 год, XHTML 1.1</h2>
+        </section>
+        <!--В то время каждый браузер(а их было 2) пытался перетянуть одеяло в свою сторону
+        реализовал спецификацию по-своему что привело к так называемым брузерным воинам
+        но как только internet explorer начали устанавливать по-умолчанию с windows netscape потерпел поражение
+        и IE стал лидером на рынке браузеров.-->
+        <section>
+            <h2>"Войны браузеров"</h2>
+            <img src="img/0.jpeg" width="600">
+            <!--Довольно долго IE был единственным популярным браузером(занимал 90% рынка)
+            Разработка спецификации практически остановилась, потому что microsoft все утраивало
+            и спецификация долгое время просто не менялась-->
+        </section>
+        <section>
+            <h2>"IE остался один"</h2>
+            <img src="img/ie6.jpg" width="600">
+        </section>
+        <!--Далее в 2004 году компании Apple Mozilla и Opera объединились в организацию WHATWG которая-->
+        <!--начала тесно сотрудничать с пользователями и развитие спецификации вновь сдвинулось с места.
+        В связи с развитием технологий скорость передачи данных увеличилась и появилать потребность в передаче видео,
+        музыки, что происходило по средствам flash. Так же появились мобильные устройства, которые могли определять местоположение.
+        на помощь всему этому пришел HTML 5 стандарт, который начал развиваться в 2008 году и закончил в 2015 году.
+         из-за стремительного развития технологий и большого простоя в развитии спецификации нужно было много чего внести в эту спецификацию
+         Например из-за передачи видео появилась возможность вставлять видео и аудио прямо в html без использования сторонних средств
+          так же появились Geolocation API, Notification API.
+        -->
+        <!--HTML 5  это современный формат и сейчас будем ео препарировать-->
+        <section>
+            <h3>2004 год WHATWG</h3>
+            <img src="img/w3c_whatwg_header.jpg">
+            <h3>(Web Hypertext Application Technology Working Group)</h3>
+            </pre>
+        </section>
+        <section>
+            <h3>2008 &mdash; 2015 HTML5</h3>
+            <img src="img/article46.jpg" height="200">
+            <ul>
+                <li class="fragment">&lt;audio&gt;, &lt;video&gt; и много новых элeментов...</li>
+                <li class="fragment">Новые виды полей ввода в формах: date/time, email, url, tel, ...</li>
+                <li class="fragment">Новые API, важные для мобильных устройств:
+                    Geolocation API,
+                    Notification API</li>
+            </ul>
+        </section>
+        <section>
+            <h1 class="animated">Анатомия HTML</h1>
+            <img src="img/beef_16x91.jpg">
+        </section>
+        <section data-transition="none">
+            <h2>HTML element</h2>
+            <p style="font-size: 40px; text-align: center;">
+<mark>&lt;a href="http://home.web.cern.ch" &gt;CERN&lt;/a&gt;</mark>
+            </p>
+        </section>
+        <section data-transition="none">
+            <h2>Открывающий тэг</h2>
+            <p style="font-size: 40px; text-align: center;">
+<mark>&lt;a</mark> href="http://home.web.cern.ch" &gt;CERN&lt;/a&gt;
+            </p>
+        </section>
+        <section data-transition="none">
+            <h2>Закрывающий тэг</h2>
+            <p style="font-size: 40px; text-align: center;">
+&lt;a href="http://home.web.cern.ch" &gt;CERN<mark>&lt;/a&gt;</mark>
+            </p>
+        </section>
+        <section data-transition="none">
+            <h2>Атрибуты</h2>
+            <p style="font-size: 40px; text-align: center;">
+&lt;a <mark>href="http://home.web.cern.ch"</mark> &gt;CERN&lt;/a&gt;
+            </p>
+        </section>
+        <section data-transition="none">
+            <h2>Содержимое</h2>
+            <p style="font-size: 40px; text-align: center;">
+&lt;a href="http://home.web.cern.ch" &gt;<mark>CERN</mark>&lt;/a&gt;
+            </p>
+        </section>
+        <section>
+            <h2>Виды тэгов</h2>
+            <ul>
+                <li>
+                    Void elements – не имеют содержимого и закрывающего тега
+                    <pre class="html l fragment">
+                        <code>
+<img src="../funny/cats.png" alt="Котики">
+                        </code>
+                    </pre>
+                </li>
+            </ul>
+        </section>
+        <section class="ex">
+            <img src="img/winter-is-coming-funny-cat-picture.jpg">
+        </section>
+        <section>
+            <h2>Виды элементов</h2>
+            <ul>
+                <li class="">
+                    Raw text elements – в качестве содержимого могут иметь только текст
+                    <pre class="html l">
+                        <code>
+<title>HTML Лекция</title>
+                        </code>
+                    </pre>
+                </li>
+                <li class="fragment">
+                    Normal elements – в качестве содержимого могут иметь как текст, так и другие элементы.
+                    <pre class="html l fragment">
+                        <code>
+<p>
+    <a href="http://home.web.cern.ch/">CERN</a>
+    is a European research organization
+    that operates the largest particle physics
+    laboratory in the world.
+</p>
+                        </code>
+                    </pre>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2>Документ</h2>
+            <pre class="html l fragment">
+                    <code>
+&lt;html&gt;
+    <meta name="keywords" content="CERN, European,.."/>
+    <title>CERN</title>
+    <p>
+        <a href="http://home.web.cern.ch/">CERN</a>
+        is a European research organization
+        that operates the largest particle physics laboratory in the world.
+    </p>
+&lt;/html&gt;
+                    </code>
+                </pre>
+        </section>
+        <section class="ex">
+            <p style="font-size: 60px;">
+                <a href="http://home.web.cern.ch/">CERN</a>
+                is a European research organization
+                that operates the largest particle physics laboratory in the world.
+            </p>
+        </section>
+        <section>
+            <h2>Незакрывающиеся элементы</h2>
+            <pre class="html l ">
+                    <code>
+<ul>
+    &#x3C;li&#x3E;Молоко
+    &#x3C;li&#x3E;Хлеб
+    &#x3C;li&#x3E;Яблоки
+    &#x3C;li&#x3E;Audi TT
+</ul>
+                    </code>
+                </pre>
+        </section>
+        <section class="ex">
+<ul style="font-size: 50px;">
+    <li>Молоко
+    <li>Хлеб
+    <li>Яблоки
+    <li>Audi TT
+</ul>
+        </section>
+        <section>
+            <h2>Незакрывающиеся элементы</h2>
+            <pre class="html l ">
+                    <code>
+<ul>
+    &#x3C;li&#x3E;Молоко
+    &#x3C;li&#x3E;Хлеб
+    &#x3C;li&#x3E;Яблоки
+    &#x3C;li&#x3E;Audi TT
+</ul>
+                    </code>
+                </pre>
+            <p>
+                <a href="http://www.w3.org/TR/html5/syntax.html#optional-tags">Полный список элементов</a>, у которых мы
+                можем не указывать закрывающий тег.
+            </p>
+        </section>
+        <section data-transition="none">
+            <h2>Атрибуты</h2>
+
+            <!--<p>&mdash; задают свойства элемента</p>-->
+            <p style="font-size: 40px; text-align: center;">
+            &lt;a <mark>href="http://home.web.cern.ch"</mark> &gt;CERN&lt;/a&gt;
+            </p>
+        </section>
+        <section data-transition="none">
+            <h2>Имя</h2>
+
+            <p style="font-size: 40px; text-align: center;">
+            &lt;a <mark>href</mark>="http://home.web.cern.ch" &gt;CERN&lt;/a&gt;
+            </p>
+        </section>
+        <section data-transition="none">
+            <h2>Значения</h2>
+            <p style="font-size: 40px; text-align: center;">
+            &lt;a href="<mark>http://home.web.cern.ch</mark>" &gt;CERN&lt;/a&gt;
+            </p>
+        </section>
+        <section>
+            <h3>Их может быть несколько</h3>
+            <pre class="html l" style="line-height: 16px;">
+                <code style="text-align: center;">
+<input type="button" value="Click me">
+                </code>
+            </pre>
+            <h3 class="fragment">Кавычки не обязательны</h3>
+            <pre class="html l fragment" style="line-height: 16px;">
+                <code style="text-align: center;">
+&#x3C;input type=button value=Click &#x3E;
+                </code>
+            </pre>
+            <h3 class="fragment">Бывают одиночние атрибуты</h3>
+            <pre class="html l fragment" style="line-height: 16px;">
+                <code style="text-align: center;">
+&#x3C;input disabled type=button &#x3E;
+                </code>
+            </pre>
+            <button class="fragment" style="-webkit-appearance: normal; transform: scale(3)">Click me</button>
+        </section>
+        <section>
+            <h2>Комментарии</h2>
+            <pre class="html m fragment">
+                <code>
+                    <!-- One line comment -->
+                    <!--
+                        Multi line
+                        comment
+                    -->
+                </code>
+            </pre>
+        </section>
+        <section data-transition="none">
+            <h2>Текст</h2>
+            <p style="font-size: 40px; text-align: center;">
+            &lt;a href="http://home.web.cern.ch" &gt;<mark>CERN</mark>&lt;/a&gt;
+            </p>
+        </section>
+        <section data-transition="none">
+            <h2>Внутри значений атрибутов</h2>
+            <p style="font-size: 40px; text-align: center;">
+            &lt;a href="<mark>http://home.web.cern.ch</mark>" &gt;CERN&lt;/a&gt;
+            </p>
+        </section>
+        <section data-transition="none">
+            <h2>МЕЖДУ атрибутами НЕЛЬЗЯ</h2>
+            <p style="font-size: 40px; text-align: center;">
+            &lt;a <mark style="background: red;">Здесь нельзя</mark>href="http://home.web.cern.ch"&gt; CERN&lt;/a&gt;
+            </p>
+        </section>
+        <section data-transition="none">
+            <h2>Внутри комментариев</h2>
+            <p style="font-size: 40px; text-align: center;">
+            &lt;!--<mark>Комментарий</mark>--&gt;<br>
+            &lt;a href="http://home.web.cern.ch" &gt;CERN&lt;/a&gt;
+            </p>
+        </section>
+        <section>
+            <h3>HTML Entity</h3>
+
+            <p class="fragment">Внутри текста можно использовать символы-мнемоники (Entity Characters).
+                <a href="http://www.w3.org/TR/html5/syntax.html#named-character-references">Полный список</a>
+            </p>
+            <pre class="html l fragment">
+                <code>
+&#x3C;p&#x3E;&#x26;copy;&#x3C;/p&#x3E;    <!-- © -->
+&#x3C;p&#x3E;&#x26;amp;&#x3C;/p&#x3E;     <!-- & -->
+&#x3C;p&#x3E;&#x26;pound;&#x3C;/p&#x3E;   <!-- £ -->
+<p>&#x26;nbsp;</p> <!-- Неразрывный пробел (no-break space) -->
+                </code>
+            </pre>
+            <p class="fragment">Указание <strong>&</strong> и <strong>;</strong> – обязательно;</p>
+        </section>
+        <section>
+            <p class="">Мы можем использовать как именованную ссылку на символ (Named Сharacter References).</p>
+            <pre class="html l fragment">
+                <code>
+&#x3C;p&#x3E;&#x26;copy;&#x3C;/p&#x3E;    <!-- © -->
+&#x3C;p&#x3E;&#x26;amp;&#x3C;/p&#x3E;     <!-- & -->
+&#x3C;p&#x3E;&#x26;pound;&#x3C;/p&#x3E;   <!-- £ -->
+                </code>
+            </pre>
+            <p class="fragment">Так и числовую ссылку (Numeric Character Reference).
+            </p>
+            <pre class="html l fragment">
+                <code>
+&#x3C;p&#x3E;&#x26;sum;&#x3C;/p&#x3E;       <!-- Символ Σ -->
+&#x3C;p&#x3E;&#x26;#x03A3;&#x3C;/p&#x3E;    <!-- Шестнадцатеричный код -->
+&#x3C;p&#x3E;&#x26;#x3A3;&#x3C;/p&#x3E;     <!-- Ноль можно опустить -->
+&#x3C;p&#x3E;&#x26;#0931;&#x3C;/p&#x3E;     <!-- Десятичный код -->
+&#x3C;p&#x3E;&#x26;#931;&#x3C;/p&#x3E;      <!-- Ноль можно опустить -->
+                </code>
+            </pre>
+        </section>
+        <section data-transition="none">
+            <h2>Типы разметки</h2>
+             <pre class="html l">
+                 <code>
+ &lt;html&gt;
+     &lt;head&gt;
+         &#x3C;meta name=&#x22;keywords&#x22; content=&#x22;CERN, European,..&#x22;/&#x3E;
+         &#x3C;title&#x3E;CERN&#x3C;/title&#x3E;
+     &lt;/head&gt;
+     &lt;body&gt;
+         &#x3C;p&#x3E;
+             &#x3C;a href=&#x22;http://home.web.cern.ch/&#x22;&#x3E;CERN&#x3C;/a&#x3E;
+             is a &#x3C;b&#x3E;European&#x3C;/b&#x3E; research organization
+             that operates the &#x3C;i&#x3E;largest&#x3C;/i&#x3E; particle
+             &#x3C;u&#x3E;physics&#x3C;/u&#x3E; laboratory in the world.
+         &#x3C;/p&#x3E;
+     &lt;/body&gt;
+ &lt;/html&gt;
+                 </code>
+             </pre>
+        </section>
+        <section data-transition="none">
+            <h2>Описательная</h2>
+            <p>– определяет метаинформацию документа.</p>
+            <pre class="m">
+&lt;html&gt;
+    &lt;head&gt;
+        <mark>&#x3C;meta name=&#x22;keywords&#x22; content=&#x22;CERN, European,..&#x22;/&#x3E;
+        &#x3C;title&#x3E;CERN&#x3C;/title&#x3E;</mark>
+    &lt;/head&gt;
+    &lt;body&gt;
+        &#x3C;p&#x3E;
+            &#x3C;a href=&#x22;http://home.web.cern.ch/&#x22;&#x3E;CERN&#x3C;/a&#x3E;
+            is a &#x3C;b&#x3E;European&#x3C;/b&#x3E; research organization
+            that operates the &#x3C;i&#x3E;largest&#x3C;/i&#x3E; particle
+            &#x3C;u&#x3E;physics&#x3C;/u&#x3E; laboratory in the world.
+        &#x3C;/p&#x3E;
+    &lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+        </section>
+        <section data-transition="none">
+            <h2>Структурная</h2>
+            <p class="">– определяет структуру и назначение текста</p>
+            <pre class="m">
+&lt;html&gt;
+    &lt;head&gt;
+        &#x3C;meta name=&#x22;keywords&#x22; content=&#x22;CERN, European,..&#x22;/&#x3E;
+        &#x3C;title&#x3E;CERN&#x3C;/title&#x3E;</mark>
+    &lt;/head&gt;
+    &lt;body&gt;
+        <mark>&#x3C;p&#x3E;
+            &#x3C;a href=&#x22;http://home.web.cern.ch/&#x22;&#x3E;CERN&#x3C;/a&#x3E;
+            is a &#x3C;b&#x3E;European&#x3C;/b&#x3E; research organization
+            that operates the &#x3C;i&#x3E;largest&#x3C;/i&#x3E; particle
+            &#x3C;u&#x3E;physics&#x3C;/u&#x3E; laboratory in the world.
+        &#x3C;/p&#x3E;</mark>
+    &lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+        </section>
+        <section data-transition="none">
+            <h2>Визуальная</h2>
+            <p class="">– определяет то как элемент будет выглядеть</p>
+
+            <pre class="m">
+&lt;html&gt;
+    &lt;head&gt;
+        &#x3C;meta name=&#x22;keywords&#x22; content=&#x22;CERN, European,..&#x22;/&#x3E;
+        &#x3C;title&#x3E;CERN&#x3C;/title&#x3E;</mark>
+    &lt;/head&gt;
+    &lt;body&gt;
+        &#x3C;p&#x3E;
+            &#x3C;a href=&#x22;http://home.web.cern.ch/&#x22;&#x3E;CERN&#x3C;/a&#x3E;
+            <mark>is a &#x3C;b&#x3E;European&#x3C;/b&#x3E; research organization
+            that operates the &#x3C;i&#x3E;largest&#x3C;/i&#x3E; particle
+            &#x3C;u&#x3E;physics&#x3C;/u&#x3E; laboratory in the world.</mark>
+        &#x3C;/p&#x3E;
+    &lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+        </section>
+        <section data-transition="none">
+            <h2>Ссылочная</h2>
+            <p class="">- обозначает части документа, как ссылки.</p>
+            <pre class="m">
+&lt;html&gt;
+    &lt;head&gt;
+        &#x3C;meta name=&#x22;keywords&#x22; content=&#x22;CERN, European,..&#x22;/&#x3E;
+        &#x3C;title&#x3E;CERN&#x3C;/title&#x3E;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &#x3C;p&#x3E;
+            <mark>&#x3C;a href=&#x22;http://home.web.cern.ch/&#x22;&#x3E;CERN&#x3C;/a&#x3E;</mark>
+            is a &#x3C;b&#x3E;European&#x3C;/b&#x3E; research organization
+            that operates the &#x3C;i&#x3E;largest&#x3C;/i&#x3E; particle
+            &#x3C;u&#x3E;physics&#x3C;/u&#x3E; laboratory in the world.
+        &#x3C;/p&#x3E;
+    &lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+        </section>
+        <section class="ex" >
+            <meta name="keywords" content="CERN, European, physics"/>
+            <title>CERN</title>
+            <p style="font-size: 60px;">
+                <a href="http://home.web.cern.ch/">CERN</a>
+                is a <b>European</b> research organization
+                that operates the <i>largest</i> particle <u>physics</u> laboratory in the world.
+            </p>
+        </section>
+        <section>
+            <p class="c" style="font-size: 40px;">С развитием CSS, визуальная разметка стала не нужна, её рекомендуется не использовать.</p>
+            <pre class="html l fragment">
+                <code style="text-align: center;">
+&lt;p&gt;<center>centered text</center>&lt;/p&gt;
+                </code>
+            </pre>
+            <p class="c fragment">↓</p>
+            <pre class="html l fragment">
+                <code style="text-align: center;">
+<p style="text-align: center">centered text</p>
+                </code>
+            </pre>
+        </section>
+        <section data-background="img/tube_map.gif">
+            <h2>Элементы</h2>
+        </section>
+        <section>
+            <h3>Корневой элемент html</h3>
+            <pre class="html l">
+                <code>
+&lt;html lang="ru"&gt;
+    &lt;head&gt;
+        &#x3C;meta name=&#x22;keywords&#x22; content=&#x22;CERN, European,..&#x22;/&#x3E;
+        &#x3C;title&#x3E;CERN&#x3C;/title&#x3E;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &#x3C;p&#x3E;
+            &#x3C;a href=&#x22;http://home.web.cern.ch/&#x22;&#x3E;CERN&#x3C;/a&#x3E;
+            is a &#x3C;b&#x3E;European&#x3C;/b&#x3E; research organization
+            that operates the &#x3C;i&#x3E;largest&#x3C;/i&#x3E; particle
+            &#x3C;u&#x3E;physics&#x3C;/u&#x3E; laboratory in the world.
+        &#x3C;/p&#x3E;
+    &lt;/body&gt;
+&lt;/html&gt;
+                </code>
+            </pre>
+        </section>
+        <section data-background-image="img/Meteor_shower_hd_wallpaper.jpg">
+            <h2>Метаэлементы</h2>
+        </section>
+        <section>
+            <h3>title</h3>
+
+            <p>&mdash; элемент определяет заголовок документа.</p>
+            <pre class="html l">
+                <code>
+&#x3C;html lang=&#x22;en&#x22;&#x3E;
+    &#x3C;head&#x3E;
+        <title>CERN</title>
+    &#x3C;/head&#x3E;
+&#x3C;/html&#x3E;
+                </code>
+            </pre>
+            <p>&mdash; единственный <strong>обязательный</strong> тег, и он не должен быть пустым.</p>
+        </section>
+        <section>
+            <h3>link</h3>
+
+            <p>&mdash; устанавливает связь с внешним документом, например с СSS файлом (где хранятся стили).</p>
+            <pre class="html m">
+                <code>
+&#x3C;html lang=&#x22;en&#x22;&#x3E;
+    &#x3C;head&#x3E;
+        <link href="styles.css"/>
+        <!--media="all/screen/print/speech/braille"-->
+        <link href="print-styles.css" media="print"/>
+        <link href="favicon.ico"/>
+    &#x3C;/head&#x3E;
+&#x3C;/html&#x3E;
+                </code>
+            </pre>
+            <p><strong>media</strong> описывает устройство, для которого следует применять стилевое
+                оформление</p>
+        </section>
+        <section>
+            <h3>Атрибут rel (relationship)</h3>
+
+            <p>&mdash; описывает тип связи</p>
+            <pre class="html m ">
+                <code>
+&#x3C;html lang=&#x22;en&#x22;&#x3E;
+    &#x3C;head&#x3E;
+        <link
+            rel="alternate"
+            type="application/rss+xml"
+            href="rss.xml">
+    &#x3C;/head&#x3E;
+&#x3C;/html&#x3E;
+                </code>
+            </pre>
+            <p class=""><strong>alternate</strong> &mdash; описывает, что есть альтернативный формат у документа
+            </p>
+
+            <p class=""><a href="http://www.w3.org/TR/html5/links.html#linkTypes">Список доступных типов
+                связей.</a></p>
+        </section>
+        <section>
+            <h3>base</h3>
+
+            <p>&mdash; определяет базовый адрес для всех ссылок документа, а так же как они будут открываться (в текущем
+                окне target="_self" или в новом target="_blank")</p>
+            <pre class="html l">
+                <code>
+&#x3C;html lang=&#x22;en&#x22;&#x3E;
+    &#x3C;head&#x3E;
+        &#x3C;base href="http://ya.ru/pages" &#x3E;
+    &#x3C;/head&#x3E;
+    <a href="about.html">About</a>
+    <!-- http://ya.ru/pages/about.html -->
+&#x3C;/html&#x3E;
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h3>script</h3>
+
+            <p>&mdash; предназначен для описания скриптов, может содержать ссылку на скрипт или его текст на
+                определённом языке.</p>
+            <pre class="html l">
+                <code>
+&#x3C;html lang=&#x22;en&#x22;&#x3E;
+    &#x3C;head&#x3E;
+        &#x3C;script src=&#x22;path/jquery-plugin.js&#x22;&#x3E;&#x3C;/script&#x3E;
+    &#x3C;/head&#x3E;
+    &#x3C;body&#x3E;
+        &#x3C;script&#x3E;
+            console.log(&#x27;Hello!&#x27;);
+        &#x3C;/script&#x3E;
+    &#x3C;/body&#x3E;
+&#x3C;/html&#x3E;
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h3>style</h3>
+
+            <p>&mdash; предназначен для определения стилей.</p>
+            <pre class="html m">
+                <code>
+&#x3C;html lang=&#x22;en&#x22;&#x3E;
+    &#x3C;head&#x3E;
+        <!--media="all/screen/print/speech/braille"-->
+        <style media="screen">
+            p {
+                color: red;
+            }
+        </style>
+    &#x3C;/head&#x3E;
+&#x3C;/html&#x3E;
+                </code>
+            </pre>
+            <p class=""><strong>media</strong> описывает устройство, для которого следует применять стилевое
+                оформление.</p>
+        </section>
+        <section>
+            <h3>meta</h3>
+
+            <p>&mdash; определяет метаинформацию документа.</p>
+            <pre class="html m">
+                <code>
+&#x3C;html lang=&#x22;en&#x22;&#x3E;
+    &#x3C;head&#x3E;
+        <!--  name="название" content="значение"-->
+        <meta name="keyword" content="CERN, European, physics">
+        <meta name="description" content="CERN, the European...">
+        <meta name="author" content="Tim Berners-Li">
+    &#x3C;/head&#x3E;
+&#x3C;/html&#x3E;
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h3>Open Graph</h3>
+
+            <p>&mdash; возможность связывать свой контент с социальными сетями, возможность правильно его там
+                представлять.</p>
+            <pre class="html m fragment">
+                <code>
+&#x3C;html lang=&#x22;en&#x22;&#x3E;
+    &#x3C;head&#x3E;
+        <meta property="og:title" content="Осень, Matt Absolon."/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="http://yandex.ru/images..."/>
+        <meta property="og:image" content="http://avatars.yandex..."/>
+    &#x3C;/head&#x3E;
+&#x3C;/html&#x3E;
+                </code>
+            </pre>
+            <p class="fragment"><a href="http://fbdevwiki.com/wiki/Open_Graph_protocol">Подробный список Open Graph
+                тегов.</a></p>
+        </section>
+        <section>
+            <img src="img/2015-09-21_2328.png">
+        </section>
+        <section>
+            <h3>Технические meta-элементы</h3>
+            <pre class="html m">
+                <code>
+&#x3C;html lang=&#x22;en&#x22;&#x3E;
+    &#x3C;head&#x3E;
+        <!-- Документ устареет 1 января 2016 года в 7 утра -->
+        &#x3C;meta http-equiv="expires"
+            content="Sun, 01 Jan 2016 07:01:00 GMT"&#x3E;
+
+        <!-- Страница будет обновляться браузером раз в 5 секунд -->
+        &#x3C;meta http-equiv=&#x22;refresh&#x22;
+            content=&#x22;5; url=http://www.example.com/&#x22; &#x3E;
+    &#x3C;/head&#x3E;
+&#x3C;/html&#x3E;
+                </code>
+            </pre>
+            <p><a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%82%D0%B0%D1%82%D0%B5%D0%B3%D0%B8">Подробный список
+                метатегов.</a></p>
+        </section>
+        <section data-background-image="img/featured-space-policy.jpg">
+            <h3>Секционные элементы</h3>
+        </section>
+        <section>
+            <img src="img/semantic.jpeg" width="700">
+        </section>
+        <section>
+            <h4>article</h4>
+
+            <p>&mdash; обозначает законченную самодостаточную часть документа: пост на форуме или в блоге, новостная
+                статья или виджет.</p>
+            <pre class="html m">
+                <code>
+<article> <!-- Пост в блоге -->
+    <h1>Protect — как Яндекс.Браузер защищает пользователей</h1>
+    <p>Яндекс.Браузер предостерегает пользователей,
+       когда они начинают вводить пароль на подозрительных страницах.
+    </p>
+    &lt;section&gt;
+        <h1>Комментарии</h1>
+        <article> <!-- Комментарий -->
+            <p>Отлично!</p>
+        </article>
+        <article> <!-- Комментарий -->
+            <p>Где скачать?</p>
+        </article>
+    &lt;/section&gt;
+</article>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <article  style="font-size: 35px;"> <!-- Пост в блоге -->
+                <h1 style="font-size: 40px;">Protect — как Яндекс.Браузер защищает пользователей</h1>
+                <p>Яндекс.Браузер предостерегает пользователей,
+                   когда они начинают вводить пароль на подозрительных страницах.
+                </p>
+                <section>
+                    <h1 style="font-size: 30px;">Комментарии</h1>
+                    <article> <!-- Комментарий -->
+                        <p>Отлично!</p>
+                    </article>
+                    <article> <!-- Комментарий -->
+                        <p>Где скачать?</p>
+                    </article>
+                </section>
+            </article>
+        </section>
+        <section>
+            <h3>section</h3>
+
+            <p>&mdash; определяет тематическую группу элементов: блок комментариев к посту в блоге, или главы в статье,
+                или список постов</p>
+            <pre class="html m">
+                <code>
+&lt;section&gt;
+    <article>
+        <!-- Первый пост -->
+        <p>Яндекс.Браузер предостерегает пользователей,
+           когда они начинают вводить пароль на подозрительных страницах.
+        </p>
+    </article>
+
+    <article>
+        <!-- Второй пост  -->
+        <p>Яндекс.Браузер предостерегает пользователей,
+           когда они начинают вводить пароль на подозрительных страницах.
+        </p>
+    </article>
+&lt;/section&gt;
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h3>nav (navigation)</h3>
+
+            <p>&mdash; определяет блок с навигацией по связанным документам. Рекомендуется использовать только для
+                главной навигации.</p>
+            <pre class="html l">
+                <code>
+<nav>
+    <a href="about.html">О компании</a>
+    <a href="catalogue.html">Каталог продукции</a>
+    <a href="contacts.html">Контакты</a>
+</nav>
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h3>aside</h3>
+
+            <p>&mdash; пределяет блок с сопуствующим содержимым(для обозначения выносок или цитат)</p>
+            <pre class="html m">
+                <code>
+<article> <!-- Пост в блоге -->
+    <h1>Protect — как Яндекс.Браузер защищает пользователей</h1>
+    <p>Яндекс.Браузер предостерегает пользователей,
+        когда они начинают вводить пароль на подозрительных
+        страницах.</p>
+    <aside>
+        <p>Браузер — прикладное программное обеспечение для
+            просмотра веб-страниц</p>
+    </aside>
+    <p>Как только пользователь устанавливает курсор мыши в
+        поле для ввода пароля
+        на любом сайте, которого нет в списке, активируется
+        система защиты.</p>
+    <aside>
+        <q>Везде, где есть жизнь, есть и опасность /Эмеpсон/</q>
+    </aside>
+</article>
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h3>header</h3>
+
+            <p>&mdash; определяет шапку всего документа или шапку секции</p>
+            <pre class="html l">
+                <code>
+<header>
+    <h1>Блог компании Яндекс</h1>
+</header>
+<article>
+    <h1>
+        Protect — как Яндекс.Браузер защищает пользователей
+    </h1>
+
+    <p>
+        Яндекс.Браузер предостерегает пользователей,
+        когда они начинают вводить пароль на подозрительных страницах.
+    </p>
+</article>
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h3>footer</h3>
+
+            <p>&mdash; определяет подвал всего документа или подвал секции.</p>
+            <pre class="html l">
+                <code>
+<article>
+    <h1>
+        Protect — как Яндекс.Браузер защищает пользователей
+    </h1>
+
+    <p>
+        Яндекс.Браузер предостерегает пользователей,
+        когда они начинают вводить пароль на подозрительных страницах.
+    </p>
+</article>
+<footer>
+    <p>© 2013–2015 ООО «Яндекс»</p>
+</footer>
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h3>address</h3>
+
+            <p>&mdash; определяет блок с контактной информацией, относящейся к ближайшему &#x3C;article&#x3E; или &#x3C;body&#x3E;</p>
+            <pre class="html l">
+                <code>
+<article>
+    <h1>
+        Protect — как Яндекс.Браузер защищает пользователей
+    </h1>
+    <p>
+        Яндекс.Браузер предостерегает пользователей,
+        когда они начинают вводить пароль на подозрительных страницах.
+    </p>
+    <address>
+        Для получения подробностей пишите на
+        <a href="mailto:help@yandex.ru">help@yandex.ru</a>
+    </address>
+</article>
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h3>h1 - h6</h3>
+
+            <p>&mdash; определяет заголовок для секционных элементов или &#x3C;body&#x3E;. Число определяет уровень, 1 –
+                наивысший, 6 – наименьший.</p>
+            <pre class="html l">
+                <code>
+<article>
+    <h1>h1</h1>
+    <h2>h2</h2>
+    <h3>h3</h3>
+    <h4>h4</h4>
+    <h5>h5</h5>
+    <h6>h6</h6>
+</article>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <article>
+                <h1>h1</h1>
+                <h2>h2</h2>
+                <h3>h3</h3>
+                <h4>h4</h4>
+                <h5>h5</h5>
+                <h6>h6</h6>
+            </article>
+        </section>
+        <section>
+            <h3>hgroup</h3>
+
+            <p>&mdash; определяет группу заголовков.</p>
+            <pre class="html l">
+                <code>
+<hgroup>
+    <h1>Dr. Strangelove or:</h1>
+    <h2>
+        How I Learned to Stop Worrying and Love the Bomb
+    </h2>
+</hgroup>
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h1>Демо</h1>
+        </section>
+        <section data-background-image="img/group-el.jpg">
+            <h2>Группирующие элементы</h2>
+        </section>
+        <section>
+            <h3>main</h3>
+
+            <p>&mdash; главное содержимое страницы.</p>
+            <pre class="html l">
+                <code>
+<nav>
+    <a href="/">На главную</a>
+    <a href="/new">Свежие посты</a>
+    <a href="/archive">Архив по года</a>
+</nav>
+<main>
+    <article>
+        <hgroup>
+            <h1>Protect — как Яндекс.Браузер защищает пользователей</h1>
+            <h2>Защита от кражи паролей</h2>
+        </hgroup>
+        <p>Яндекс.Браузер предостерегает пользователей,
+        когда они начинают вводить пароль на подозрительных..</p>
+    </article>
+</main>
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h3>p (paragraph)</h3>
+
+            <p>&mdash; определяет параграф текста</p>
+            <pre class="html l">
+                <code>
+<article> <!-- Пост в блоге -->
+    <h1>
+        Protect — как Яндекс.Браузер защищает пользователей
+    </h1>
+    <p>Яндекс.Браузер предостерегает пользователей,
+        когда они начинают вводить пароль на подозрительных
+        страницах.</p>
+    <p>Как только пользователь устанавливает курсор мыши в
+        поле для ввода пароля на любом сайте, которого нет
+        в списке, активируется система защиты.</p>
+</article>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <article> <!-- Пост в блоге -->
+                <h1 style="font-size: 50px;">Protect — как Яндекс.Браузер защищает
+                    пользователей</h1>
+                <p>Яндекс.Браузер предостерегает пользователей,
+                когда они начинают вводить пароль на подозрительных страницах.</p>
+                <p>Как только пользователь устанавливает курсор мыши в поле для ввода пароля
+                на любом сайте, которого нет в списке, активируется система защиты.</p>
+            </article>
+        </section>
+        <section>
+            <h3>hr (horizontal rule)</h3>
+
+            <p>&mdash; разделяет параграфы текста. Например, когда сменилась тема повествования</p>
+            <pre class="html l">
+                <code>
+<article> <!-- Пост в блоге -->
+    <h1>
+        Protect — как Яндекс.Браузер защищает пользователей
+    </h1>
+    <p>Яндекс.Браузер предостерегает пользователей,
+        когда они начинают вводить пароль на подозрительных
+        страницах.</p>
+    <hr>
+    <p>Как только пользователь устанавливает курсор мыши в
+        поле для ввода пароля на любом сайте, которого нет
+        в списке, активируется система защиты.</p>
+</article>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <article> <!-- Пост в блоге -->
+                <h1 style="font-size: 40px;">Protect — как Яндекс.Браузер защищает пользователей</h1>
+                <p>Яндекс.Браузер предостерегает пользователей,
+                когда они начинают вводить пароль на подозрительных страницах.</p>
+                <hr>
+                <p>Как только пользователь устанавливает курсор мыши в поле для ввода пароля
+                на любом сайте, которого нет в списке, активируется система защиты.</p>
+            </article>
+        </section>
+        <section>
+            <h4>Что будет?</h4>
+            <pre class="html m">
+                <code>
+<p>
+,--.   ,--.  ,---.  ,------.  ,---.
+|   `.'   | /  O  \ |  .--. ''   .-'
+|  |'.'|  ||  .-.  ||  '--'.'`.  `-.
+|  |   |  ||  | |  ||  |\  \ .-'    |
+`--'   `--'`--' `--'`--' '--'`-----'
+</p>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <p>
+            ,--.   ,--.  ,---.  ,------.  ,---.
+            |   `.'   | /  O  \ |  .--. ''   .-'
+            |  |'.'|  ||  .-.  ||  '--'.'`.  `-.
+            |  |   |  ||  | |  ||  |\  \ .-'    |
+            `--'   `--'`--' `--'`--' '--'`-----'
+            </p>
+        </section>
+        <section>
+            <h3>pre (preformatted text)</h3>
+
+            <p>&mdash;  определяет блок предварительно форматированного текста.
+                Такой текст отображается моноширинным шрифтом, сохраняя всё форматирование: пробелы, отступы</p>
+            <pre class="html m">
+                <code>
+&lt;pre&gt;
+,--.   ,--.  ,---.  ,------.  ,---.
+|   `.'   | /  O  \ |  .--. ''   .-'
+|  |'.'|  ||  .-.  ||  '--'.'`.  `-.
+|  |   |  ||  | |  ||  |\  \ .-'    |
+`--'   `--'`--' `--'`--' '--'`-----'
+&lt;/pre&gt;
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <pre style="width: 490px; margin: 100px auto 100px;">
+            ,--.   ,--.  ,---.  ,------.  ,---.
+            |   `.'   | /  O  \ |  .--. ''   .-'
+            |  |'.'|  ||  .-.  ||  '--'.'`.  `-.
+            |  |   |  ||  | |  ||  |\  \ .-'    |
+            `--'   `--'`--' `--'`--' '--'`-----'
+            </pre>
+        </section>
+        <section>
+            <h3>blockquote</h3>
+
+            <p>&mdash; предназначен для выделения длинных цитат внутри документа.</p>
+            <pre class="html l">
+                <code>
+<blockquote cite="http://example.com">
+    Life is what happens to you while you’re busy
+    making other plans. // Джон Леннон
+</blockquote>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <blockquote style="font-size: 50px;" cite="http://example.com">
+                Life is what happens to you while you’re busy making other plans. // Джон Леннон
+            </blockquote>
+        </section>
+        <section>
+            <h3>ol и li</h3>
+            <p>ordered list – определяет упорядоченный список(1, 2, 3).</p>
+            <p>list item – определяет элемент списка.</p>
+            <pre class="html l">
+                <code>
+<h1>Список покупок</h1>
+
+<ol>
+    <li>Молоко</li>
+    <li>Хлеб</li>
+    <li>Яблоки</li>
+    <li>Audi TT</li>
+</ol>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <h1 style="font-size: 60px;">Список покупок</h1>
+
+            <ol style="font-size: 50px;">
+                <li>Молоко</li>
+                <li>Хлеб</li>
+                <li>Яблоки</li>
+                <li>Audi TT</li>
+            </ol>
+        </section>
+        <section>
+            <h3>атрибут reversed</h3>
+            <pre class="html l">
+                <code>
+&#x3C;ol reversed&#x3E;
+    <li>Молоко</li>
+    <li>Хлеб</li>
+    <li>Яблоки</li>
+    <li>Audi TT</li>
+&#x3C;/ol&#x3E;
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <ol style="font-size: 50px;" reversed>
+                <li>Молоко</li>
+                <li>Хлеб</li>
+                <li>Яблоки</li>
+                <li>Audi TT</li>
+            </ol>
+        </section>
+        <section>
+            <h3>атрибут type</h3>
+            <p>&mdash; задаёт тип нумерации</p>
+            <pre class="html l">
+                <code>
+<ol type="I">
+    <li>Яблоки</li>
+    <li>Хлеб</li>
+    <li>Audi TT</li>
+</ol>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <ol style="list-style-type: upper-roman; font-size: 40px;" type="I">
+                <li>Молоко</li>
+                <li>Хлеб</li>
+                <li>Audi TT</li>
+            </ol>
+        </section>
+
+        <section>
+            <h3>Вложеные списки</h3>
+            <pre class="html l">
+                <code>
+<ol type="I">
+    <li>Яблоки</li>
+    <li>Хлеб</li>
+    <ol type="A">
+        <li>Бананы</li>
+        <li>Сельдь</li>
+        <li>Молоко</li>
+    </ol>
+    <li>Audi TT</li>
+</ol>
+                </code>
+            </pre>
+        </section>
+        <section>
+            <ol style="list-style-type: upper-roman; font-size: 40px;" type="I">
+                <li>Молоко</li>
+                <li>Хлеб</li>
+                <ol style="list-style-type: upper-alpha" type="A">
+                    <li>Бананы</li>
+                    <li>Сельдь</li>
+                    <li>Молоко</li>
+                </ol>
+                <li>Audi TT</li>
+            </ol>
+            <br>
+            <img src="img/risovach.ru.jpg" height="300">
+        </section>
+
+
+        <section>
+            <h3>ul (unordered list)</h3>
+            <p>&mdash; определяет неупорядоченный список (маркированный).</p>
+            <pre class="html l">
+                <code>
+<ul>
+    <li>Молоко</li>
+    <li>Хлеб</li>
+    <li>Яблоки</li>
+    <li>Audi TT</li>
+</ul>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <ul style="font-size: 40px;">
+                <li>Молоко</li>
+                <li>Хлеб</li>
+                <li>Audi TT</li>
+            </ul>
+        </section>
+        <section>
+            <h3>dl, dd и dt</h3>
+            <p>definition list &mdash; задаёт список «термин-описание».</p>
+            <p>definition term &mdash; задаёт термин.</p>
+            <p>definition description &mdash; задаёт описание термина.</p>
+            <pre class="html m">
+                <code>
+<dl>
+    <dt>GIF</dt>
+    <dd>Формат графических файлов, широко применяемый при создании сайтов.
+    GIF использует 8-битный цвет и эффективно сжимает сплошные цветные области,
+    при этом сохраняя детали изображения.</dd>
+    <dt>JPEG</dt>
+    <dd>Популярный формат графических файлов, широко применяемый при создании
+    сайтов и хранения изображений. JPEG поддерживает 24-битный цвет и сохраняет
+    яркость и оттенки цветов в фотографиях.</dd>
+</dl>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <dl>
+                <dt>GIF</dt>
+                <dd>Формат графических файлов, широко применяемый при создании сайтов.
+                GIF использует 8-битный цвет и эффективно сжимает сплошные цветные области,
+                при этом сохраняя детали изображения.</dd>
+                <dt>JPEG</dt>
+                <dd>Популярный формат графических файлов, широко применяемый при создании
+                сайтов и хранения изображений. JPEG поддерживает 24-битный цвет и сохраняет
+                яркость и оттенки цветов в фотографиях.</dd>
+            </dl>
+        </section>
+        <section>
+            <h3>figure и figcaption</h3>
+            <p>Элемент figure используется для группирования любых элементов и добавления подписи к ним figcaption.</p>
+            <pre class="html l">
+                <code>
+<figure>
+    <figcaption>Listing 4. The panel.</figcaption>
+    &lt;pre&gt;
+        <code>function Panel(element, canClose) {
+            this.element = element;
+            this.canClose = canClose;
+        }</code>
+    &lt;/pre&gt;
+</figure>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <figure style="font-size: 50px;">
+                <figcaption>Listing 4. The panel.</figcaption>
+                <pre style="width: 400px; margin: 0 auto;">
+                    <code>
+function Panel(element, canClose) {
+    this.element = element;
+    this.canClose = canClose;
+}
+                    </code>
+                </pre>
+            </figure>
+        </section>
+        <section>
+            <h3>figure и figcaption</h3>
+            <pre class="html l">
+                <code>
+<figure>
+    <img src="img/cats.jpg" alt="bubbles" />
+    <figcaption>Bubbles at work</figcaption>
+</figure>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <figure>
+                <img src="img/cats.jpg" alt="bubbles" height="400" />
+                <figcaption style="font-size: 40px;">Funny cats</figcaption>
+            </figure>
+        </section>
+        <section>
+            <h3>div (division – раздел)</h3>
+            <p>&mdash; универсальный группирующий элемент с целью изменения вида содержимого через стили.</p>
+            <pre class="html l">
+                <code>
+<div style="color: red;">
+    <p>
+        Яндекс.Браузер предостерегает пользователей,
+    когда они начинают вводить пароль на подозрительных
+        страницах.
+    </p>
+    <p>
+        Как только пользователь устанавливает курсор мыши
+        в поле для ввода пароля на любом сайте, которого
+        нет в списке, активируется система защиты.
+    </p>
+</div>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <div style="color: red; font-size: 50px;">
+                <p>Яндекс.Браузер предостерегает пользователей,
+                когда они начинают вводить пароль на подозрительных страницах.</p>
+                <p>Как только пользователь устанавливает курсор мыши в поле для ввода пароля
+                на любом сайте, которого нет в списке, активируется система защиты.</p>
+            </div>
+        </section>
+        <section>
+            <h3>Таблицы</h3>
+            <pre class="html m" style="font-size: 0.55em;">
+                <code>
+<table>
+    <thead> <!--обозначает шапку таблицы-->
+        <tr> <!--обозначает строку данных-->
+            <th>Game name</th> <!--обозначает ячейку шапки-->
+            <th>Game publisher</th>
+        </tr>
+    </thead>
+    <tfoot> <!--обозначает подвал таблицы-->
+        <tr>
+            <td>Game name</td>
+            <td>Game publisher</td>
+        </tr>
+    </tfoot>
+    <tbody> <!--обозначает данные таблицы-->
+        <tr>
+            <td>Diablo</td><!--обозначает ячейку таблицы-->
+            <td>Blizzard</td>
+        </tr>
+        <tr>
+            <td>Portal</td>
+            <td>Valve</td>
+        </tr>
+    </tbody>
+</table>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <table style="font-size: 50px;">
+                <thead> <!--обозначает шапку таблицы-->
+                    <tr> <!--обозначает строку данных-->
+                        <th>Game name</th> <!--обозначает ячейку шапки-->
+                        <th>Game publisher</th>
+                    </tr>
+                </thead>
+                <tfoot> <!--обозначает подвал таблицы-->
+                    <tr>
+                        <td>Game name</td>
+                        <td>Game publisher</td>
+                    </tr>
+                </tfoot>
+                <tbody> <!--обозначает данные таблицы-->
+                    <tr>
+                        <td>Diablo</td><!--обозначает ячейку таблицы-->
+                        <td>Blizzard</td>
+                    </tr>
+                    <tr>
+                        <td>Portal</td>
+                        <td>Valve</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <h3>Таблицы</h3>
+            <pre class="html m">
+                <code>
+<table>
+    <caption>Games</caption><!--Заголовок таблицы-->
+    <thead>
+        <tr>
+            <th>Game name</th>
+            <th>Game publisher</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Diablo</td>
+            <td>Blizzard</td>
+        </tr>
+        <tr>
+            <td>Portal</td>
+            <td>Valve</td>
+        </tr>
+    </tbody>
+</table>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <table style="font-size: 50px;">
+                <caption>Games</caption><!--Заголовок таблицы-->
+                <thead>
+                <tr>
+                    <th style="font-family: textbook-bold;">Game name</th>
+                    <th style="font-family: textbook-bold;">Game publisher</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Diablo</td>
+                        <td>Blizzard</td>
+                    </tr>
+                    <tr>
+                        <td>Portal</td>
+                        <td>Valve</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <h3>Объединение ячеек</h3>
+            <pre class="html m">
+                <code>
+<table>
+    <caption>Games</caption>
+    <thead>
+    <tr>
+        <th>Game name</th>
+        <th>Game publisher</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <!--Объединяет горизонтальные ячейки.-->
+            <td colspan="2">Diablo</td>
+        </tr>
+        <tr>
+            <td>Portal</td>
+            <td>Valve</td>
+        </tr>
+    </tbody>
+</table>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <table style="font-size: 50px;">
+                <caption>Games</caption>
+                <thead>
+                <tr>
+                    <th style="font-family: textbook-bold;">Game name</th>
+                    <th style="font-family: textbook-bold;">Game publisher</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <!--Объединяет горизонтальные ячейки.-->
+                        <td colspan="2">Blizzard Entertainment: Diablo III</td>
+                    </tr>
+                    <tr>
+                        <td>Portal</td>
+                        <td>Valve</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <h3>Объединение ячеек</h3>
+            <pre class="html m">
+                <code>
+<table>
+    <caption>Games</caption>
+    <thead>
+        <tr>
+            <th>Game name</th>
+            <th>Game publisher</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <!--Объединяет вертикальные ячейки.-->
+            <td rowspan="2">Diablo</td>
+            <td>Blizzard</td>
+        </tr>
+        <tr>
+            <td>Valve</td>
+        </tr>
+    </tbody>
+</table>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <table style="font-size: 50px;">
+                <caption>Games</caption>
+                <thead>
+                <tr>
+                    <th style="font-family: textbook-bold;">Game name</th>
+                    <th style="font-family: textbook-bold;">Game publisher</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <!--Объединяет вертикальные ячейки.-->
+                        <td rowspan="2">Blizzard<br>Entertainment:<br>Diablo III</td>
+                        <td>Blizzard</td>
+                    </tr>
+                    <tr>
+                        <td>Valve</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section data-background-image="img/Universe_Love.png">
+            <h2>Текстовые элементы</h2>
+        </section>
+        <section>
+            <h3>em (emphasis – акцент) </h3>
+            <p>– предназначен для акцентирования текста</p>
+            <pre class="html l">
+                <code>
+<p><em>Cats</em> are cute animals.</p>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+<p style="font-size: 50px;"><em>Cats</em> are cute animals.</p>
+        </section>
+        <section>
+            <h3>strong</h3>
+            <p>&mdash; предназначен для обозначения важной информации.</p>
+            <pre class="html l">
+                <code>
+<p><strong>Внимание!</strong> Идут учения!</p>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+<p style="font-size: 50px;"><strong style="color: #fff; font-weight: 700;">Внимание!</strong> Идут учения!</p>
+        </section>
+        <section>
+            <h3>ins (inserted text)</h3>
+            <p>&mdash; предназначен для выделения текста, который был добавлен к текущему.</p>
+            <pre class="html l">
+                <code>
+<p>С++, python, <ins datetime="2005-03-16">js</ins>
+    – классные языки программирования</p>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+<p style="font-size: 50px;">С++, python, <ins datetime="2005-03-16">js</ins> – классные языки программирования</p>
+        </section>
+        <section>
+            <h3>del (deleted text) </h3>
+            <p>&mdash; предназначен для выделения текста, который был удалён.</p>
+            <pre class="html l">
+                <code>
+<p>С++, python, js, <del datetime="2005-03-16">php</del>
+    – классные языки программирования</p>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+<p style="font-size: 50px;">С++, python, js, <del datetime="2005-03-16">php</del> – классные языки программирования</p>
+        </section>
+        <section>
+            <h3>mark (marked text)</h3>
+            <p>&mdash;  помечает текст как выделенный.</p>
+            <pre class="html l">
+                <code>
+<p>
+    С++, python, <mark>js</mark> – классные языки
+    программирования
+</p>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <p style="font-size: 50px;">С++, python, <mark>js</mark> – классные языки программирования</p>
+        </section>
+        <section>
+            <h3>small</h3>
+            <p>&mdash;  предназначен для различной уточняющей информации. Например, для условий и правовых ограничений в рекламе.</p>
+            <pre class="html l">
+                <code>
+<p>Скидка на все товары 50%</p>
+<p>
+    <small>
+        При условии покупки на сумму более 1000 рублей
+    </small>
+</p>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+<p style="font-size: 50px;">Скидка на все товары 50%</p>
+<p style="font-size: 50px;"><small>При условии покупки на сумму более 1000 рублей</small></p>
+        </section>
+        <section>
+            <h3>cite (отсылка)</h3>
+            <p>&mdash; предназначен для выделения названий книг, песен, фильмов; имён авторов.</p>
+            <pre class="html l">
+                <code>
+<p>
+    Роман Замятина <cite>Мы</cite> – одна
+    из лучших книг-антиутопий
+</p>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+<p style="font-size: 60px;">Роман Замятина <cite  style="font-style: italic;">Мы</cite> – одна из лучших книг-антиутопий</p>
+        </section>
+        <section>
+            <h3>q (quote)</h3>
+            <p>&mdash; предназначен для выделения цитат или обозначения прямой речи.</p>
+            <pre class="html l">
+                <code>
+<p>
+    <q>Le  général  Koutouzoff,</q> -- сказал  Болконский,
+    ударяя на последнем слоге zoff, как  француз
+</p>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+<p style="font-size: 50px;"><q style="quotes: initial;">Le  général  Koutouzoff,</q> -- сказал  Болконский,  ударяя на последнем
+  слоге zoff, как  француз</p>
+        </section>
+        <section>
+            <h3>dfn (definition)</h3>
+            <p>&mdash; предназначен для выделения определений, терминов.</p>
+            <pre class="html l">
+                <code>
+<p>
+    <dfn>Гипотенуза</dfn> – Сторона прямоугольного
+    треугольника,лежащая против прямого угла.
+</p>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+<p style="font-size: 50px;"><dfn>Гипотенуза</dfn> – Сторона прямоугольного треугольника,
+лежащая против прямого угла.</p>
+        </section>
+
+        <section>
+            <h3>abbr (abbreviation)</h3>
+            <p>&mdash; предназначен для выделения аббревиатур.</p>
+            <pre class="html l">
+                <code>
+<abbr title="Conseil Européen pour la Recherche Nucléaire">
+    CERN
+</abbr>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+<abbr style="font-size: 70px;" title="Conseil Européen pour la Recherche Nucléaire">CERN</abbr>
+        </section>
+
+        <section>
+            <h3>ruby, rt</h3>
+            <p>&mdash; предназначен для добавления небольшой аннотации сверху или снизу от заданного текста.</p>
+            <pre class="html l">
+                <code>
+<!-- Выводим транскрипцию английских букв над ними -->
+&#x3C;ruby&#x3E;A&#x3C;rt&#x3E;[ei]&#x3C;/rt&#x3E;&#x3C;/ruby&#x3E;
+&#x3C;ruby&#x3E;B&#x3C;rt&#x3E;[bi:]&#x3C;/rt&#x3E;&#x3C;ruby&#x3E;
+&#x3C;ruby&#x3E;C&#x3C;rt&#x3E;[si:]&#x3C;/rt&#x3E;&#x3C;ruby&#x3E;
+
+<!-- Добавляем перевод слова верху-->
+&#x3C;ruby lang=&#x22;ja&#x22;&#x3E;&#x7DE8;&#x96C6;&#x8005;&#x3C;rt lang=&#x22;ru&#x22;&#x3E;&#x420;&#x435;&#x434;&#x430;&#x43A;&#x442;&#x43E;&#x440;&#x3C;/ruby&#x3E;
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <p style="font-size: 60px; text-align: center;">
+            <!-- Выводим транскрипцию английских букв над ними -->
+            <ruby>A<rt>[ei]</rt></ruby>
+            <ruby>B<rt>[bi:]</rt><ruby>
+            <ruby>C<rt>[si:]</rt><ruby>
+            </p>
+            <p style="font-size: 60px; text-align: center;">
+            <!-- Добавляем перевод слова верху-->
+            <ruby lang="ja">編集者<rt lang="ru">Редактор</ruby>
+            </p>
+        </section>
+
+        <section>
+            <h3>time </h3>
+            <p>&mdash; предназначен для выделения дат.</p>
+            <pre class="html m">
+                <code>
+<article>
+    <p><time>1957-10-04</time> запущен первый спутник Земли.</p>
+    <p><time>1960-08-19</time> первый полёт собак в космос.</p>
+    <p><time>1961-04-12</time> первый полёт человека в космос.</p>
+    <p><time>1963-06-16</time> первый полёт женщины-космонавта.</p>
+    <p><time>1969-07-21</time> высадка человека на Луну.</p>
+    <p><time datetime="2011-11-18T14:54:39Z">November 11</time></p>
+</article>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <article style="font-size: 40px;">
+               <p><time>1957-10-04</time> запущен первый искусственный спутник Земли.</p>
+               <p><time>1960-08-19</time> первый полёт собак в космос.</p>
+               <p><time>1961-04-12</time> первый полёт человека в космос.</p>
+               <p><time>1963-06-16</time> первый полёт женщины-космонавта.</p>
+               <p><time>1969-07-21</time> высадка человека на Луну.</p>
+                <p><time datetime="2011-11-18T14:54:39Z">November 11</time></p>
+            </article>
+        </section>
+
+        <section>
+            <h3>samp, kbd</h3>
+            <p>sample output &mdash; используется для отображения текста, который является листингом программы или скрипта.</p>
+            <p>keyboard &mdash; используется для обозначения текста, который набирается на клавиатуре или для названия клавиш.</p>
+            <pre class="html l">
+                <code>
+<article>
+    <p>Нажмите <kbd>CTRL</kbd> + <kbd>S</kbd>
+        на клавиатуре.</p>
+    &lt;p&gt;
+        Компьютер должен ответить
+        <samp>Document was saved successfuly</samp>.
+    &lt/p&gt;
+</article>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <article style="font-size: 50px; font-family: times new roman;">
+                <p>Нажмите <kbd>CTRL</kbd> + <kbd>S</kbd> на клавиатуре.
+                <p>Компьютер должен ответить
+                <samp>Document was saved successfuly</samp>.</p>
+            </article>
+        </section>
+
+        <section>
+            <h3>code</h3>
+            <p>&mdash; используется для отображения текста, который является результатом вывода компьютерной программы или скрипта.</p>
+            <pre class="html l">
+                <code>
+&lt;pre&gt;
+    <code>
+        function Panel(element, canClose) {
+          this.element = element;
+          this.canClose = canClose;
+        }
+    </code>
+&lt;/pre&gt;
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <pre style="font-size: 40px;    ">
+                <code>
+function Panel(element, canClose) {
+  this.element = element;
+  this.canClose = canClose;
+}
+                </code>
+            </pre>
+        </section>
+
+        <section>
+            <h3>var (variable - переменная)</h3>
+            <p>&mdash; используется для выделения переменных в компьютерных программах или математических выражениях.</p>
+            <pre class="html l">
+                <code>
+<p>
+     Формула эквивалентности массы и энергии:
+    <var>E</var> = <var>m</var> <var>c</var><sup>2</sup>
+</p>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <p style="font-size: 50px;">
+                 Формула эквивалентности массы и энергии:
+                <var>E</var> = <var>m</var> <var>c</var> <sup>2</sup>
+            </p>
+        </section>
+
+        <section>
+            <h3>sup (superscript)</h3>
+            <p>&mdash; обозначает текст как верхний индекс. Например, для обозначения степени</p>
+            <pre class="html l">
+                <code>
+<p>
+    Формула эквивалентности массы и энергии:
+    <var>E</var> = <var>m</var> <var>c</var><sup>2</sup>
+</p>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <p style="font-size: 50px;">
+                Формула эквивалентности массы и энергии:
+                <var>E</var> = <var>m</var> <var>c</var> <sup>2</sup>
+            </p>
+        </section>
+
+        <section>
+            <h3>sub (subscript)</h3>
+            <p>&mdash; обозначает текст как нижний индекс</p>
+            <pre class="html l">
+                <code>
+<p>
+    Формула воды: H<sub>2</sub>O.
+</p>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <p style="font-size: 50px;">
+                Формула воды: H<sub>2</sub>O.
+            </p>
+        </section>
+
+        <section>
+            <h3>br (break line)</h3>
+            <p>&mdash; устанавливает перевод строки в том месте, где он находится.</p>
+            <pre class="html l">
+                <code>
+<p>
+    Варкалось. Хливкие шорьки<br>
+    Пырялись по наве,<br>
+    И хрюкотали зелюки,<br>
+    Как мюмзики в мове.<br>
+</p>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <p style="font-size: 50px;">
+            Варкалось. Хливкие шорьки<br>
+            Пырялись по наве,<br>
+            И хрюкотали зелюки,<br>
+            Как мюмзики в мове.<br>
+            </p>
+        </section>
+
+        <section>
+            <h3>wbr (word break opportunity)</h3>
+            <p>&mdash; указывает браузеру место, где допускается делать перенос строки в длинном слове.</p>
+            <pre class="html m">
+                <code>
+<p>метоксихлор<wbr>диэтиламино<wbr>метил<wbr>бутил<wbr>амино<wbr>акридин</p>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <p style="font-size: 40px;">метоксихлор<wbr>диэтиламино<wbr>метил<wbr>бутил<wbr>амино<wbr>акридин</p>
+            <p style="width: 300px; font-size: 37px;">метоксихлор<wbr>диэтиламино<wbr>метил<wbr>бутил<wbr>амино<wbr>акридин</p>
+            <p style="width: 200px; font-size: 37px;">метоксихлор<wbr>диэтиламино<wbr>метил<wbr>бутил<wbr>амино<wbr>акридин</p>
+        </section>
+
+        <section>
+            <h3>span (промежуток)</h3>
+            <p>&mdash;  универсальный текстовый элемент с целью изменения вида содержимого через стили.</p>
+            <pre class="html l">
+                <code>
+<article><span style="color: red;">Яндекс</span>.Браузер
+    предостерегает пользователей, когда они начинают
+    вводить пароль на подозрительных страницах.</article>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <article style="font-size: 50px;"><span style="color: red;">Яндекс</span>.Браузер
+                предостерегает пользователей, когда они начинают
+                вводить пароль на подозрительных страницах.</article>
+        </section>
+
+        <section>
+            <h3>Визуальная разметка</h3>
+            <p>&mdash;  универсальный текстовый элемент с целью изменения вида содержимого через стили.</p>
+            <pre class="html l">
+                <code>
+&lt;p&gt;<center>centered text</center>&lt;/p&gt;
+
+<p><b>bold text</b></p>
+
+<p><i>italic text</i></p>
+
+<p><s>strike text</s></p>
+
+<p><u>underline text</u></p>
+                </code>
+            </pre>
+        </section>
+        <section class="ex">
+            <p style="font-size: 50px;"><center>centered text</center></p>
+            <p style="font-size: 50px;"><b>bold text</b></p>
+            <p style="font-size: 50px;"><i>italic text</i></p>
+            <p style="font-size: 50px;"><s>strike text</s></p>
+            <p style="font-size: 50px;"><u>underline text</u></p>
+        </section>
+
+        <section>
+            <h1>Спасибо</h1>
+            <p style="text-align: center; font-size: 50px;"><small>Кувалдин Артем<br>
+                <a href="mailto:akuv@yandex-team.ru">akuv@yandex-team.ru</a><br>
+                <a href="https://vk.com/artemkuvaldin">https://vk.com/artemkuvaldin</a>
+            </small>
+            </p>
+            <p style="text-align: center; font-size: 50px;"><small>Гоголев Сергей<br>
+                <a href="mailto:gogoleff@yandex-team.ru">gogoleff@yandex-team.ru</a>
+                <br>
+                <a href="https://vk.com/gogoleff.sergey">https://vk.com/gogoleff.sergey</a>
+            </small></p>
+            <p style="text-align: center; font-size: 50px;"><small>Семичев Олег<br>
+                <a href="mailto:justseven@yandex-team.ru">justseven@yandex-team.ru</a>
+                <br>
+                <a href="https://vk.com/xiiivii">https://vk.com/xiiivii</a>
+            </small></p>
+        </section>
+            <style>
+                section.last a {
+                    color: white !important;
+                    text-decoration: underline !important;
+                }
+            </style>
+        <section class="last">
+            <h2>Д. З.</h2>
+            <a style="font-size: 50px; white-space: nowrap;" href="https://github.com/urfu-2015/verstka-tasks-1">https://github.com/urfu-2015/verstka-tasks-1</a>
+        </section>
+        <section class="last">
+            <h2>Ссылки</h2>
+            <p><a href="https://github.com/urfu-2015/verstka-lectures">Лекция по html</a></p>
+            <p><a href="http://www.w3.org/TR/2014/REC-html5-20141028/">HTML5 (W3C)</a></p>
+            <p><a href="https://html.spec.whatwg.org/multipage/embedded-content.html">HTML5 (WHATWG)</a></p>
+            <p><a href="https://webref.ru/html">HTML – справочник</a></p>
+            <p><a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%82%D0%B0%D1%82%D0%B5%D0%B3%D0%B8">Мета - тэги</a></p>
+            <p><a href="http://www.w3.org/People/Raggett/book4/ch02.html">История</a></p>
+        </section>
+    </div>
+</div>
+
+<script src="../lib/js/head.min.js"></script>
+<script src="../js/reveal.js"></script>
+<script src="https://yastatic.net/jquery/2.1.4/jquery.min.js"></script>
+
+<script>
+    Reveal.addEventListener( 'fragmentshown', function( event ) {
+        if (Reveal.isFirstSlide()) {
+            var root = $(event.fragment);
+            console.log(root);
+            setTimeout(function () {
+                $(root).find('h1').addClass('bounceInDown');
+                $(root).find( 'h4').addClass('bounceInRight');
+                $(root).find('small').eq(0).addClass('bounceInLeft');
+                $(root).find('small').eq(1).addClass('bounceInUp');
+            }, 0);
+        }
+    } );
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: false,
+        progress: true,
+        history: true,
+        center: false,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+            {
+                src: '../lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            }
+            },
+            {
+                src: '../plugin/markdown/marked.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: '../plugin/markdown/markdown.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: '../plugin/highlight/highlight.js', async: true, condition: function () {
+                return !!document.querySelector('pre code');
+            }, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            },
+            { src: '../plugin/zoom-js/zoom.js', async: true },
+            { src: '../plugin/notes/notes.js', async: true }
+        ]
+    });
+    Reveal.configure({ slideNumber: true });
+
+</script>
+
+</body>
+</html>

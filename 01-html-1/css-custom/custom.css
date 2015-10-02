@@ -1,0 +1,20 @@
+section .strike {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.yandex table.tableMiddle td {
+    vertical-align: middle;
+}
+
+.yandex table.tableCenter td {
+    text-align: center;
+}
+
+.yandex table.noBorder td {
+    border: none;
+}
+
+pre.size-s {
+    font-size: 20px !important;
+}
