@@ -5,7 +5,7 @@
 ### Презентации
 
 :warning: Презентации корректно работают только в webkit браузерах:
-* Chome / Canary / Chromium
+* Chrome / Canary / Chromium
 * Opera
 * Yandex Browser
 
