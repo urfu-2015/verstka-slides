@@ -6,8 +6,8 @@
 
 :warning: Презентации корректно работают только в webkit браузерах:
 * Chome / Canary / Chromium
-* Yandex Browser
 * Opera
+* Yandex Browser
 
 1. [HTML, I часть](https://rawgit.com/urfu-2015/verstka-slides/master/01-html-1/index.html#/) ([Текст лекции](https://github.com/urfu-2015/verstka-lectures/blob/master/html/part-1.md), [Домашнее задание](https://github.com/urfu-2015/verstka-tasks-1))
 1. [HTML, II часть](https://rawgit.com/urfu-2015/verstka-slides/master/02-html-2/index.html) ([Текст лекции](https://github.com/urfu-2015/verstka-lectures/blob/master/html/part-2.md), [Домашнее задание](https://github.com/urfu-2015/verstka-tasks-2))
