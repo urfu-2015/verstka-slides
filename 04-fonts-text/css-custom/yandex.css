@@ -1,0 +1,169 @@
+.reveal dfn {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.reveal span.ya-letter {
+    display: inline-block;
+}
+
+.reveal .ya-letter:first-letter {
+    color: #f00;
+}
+
+.reveal .strike {
+    text-decoration: line-through;
+}
+
+.reveal .underline {
+    text-decoration: underline;
+}
+
+.reveal h1,
+.reveal h2 {
+    text-transform: none;
+}
+
+.reveal section img {
+    border: none;
+    background: none;
+    box-shadow: 0 0 0 0 transparent;
+}
+
+.reveal section img.w_back {
+    background: #fff;
+}
+
+.reveal {
+    font-family: textbook, Arial;
+}
+
+.reveal h1, .reveal h2, .reveal h3 {
+    font-family: textbook-bold, Arial;
+}
+
+.reveal h4, .reveal h5, .reveal h6 {
+    font-family: textbook, Arial;
+}
+
+section.large,
+pre.large {
+    font-size: 50px;
+}
+
+section.middle,
+pre.middle {
+    font-size: 40px;
+}
+
+section.small,
+pre.small {
+    font-size: 30px;
+}
+
+.w25, .w33, .w50, .w75 {
+    display: inline-block;
+}
+
+.w25 {
+    width: 25%;
+}
+
+.w33 {
+    width: 33%;
+}
+
+.w50 {
+    width: 50%;
+}
+
+.t-center {
+    text-align: center !important;
+}
+
+body .reveal .slides section .from-l {
+    transform: translateX(-25%) rotateY(-65deg) scale(.5);
+}
+
+body .reveal .slides section .from-r {
+    transform: translateX(25%) rotateY(65deg) scale(.5);
+}
+
+body .reveal .slides section .from-t {
+    transform: translateY(-25%) rotateX(65deg) scale(.5);
+}
+
+body .reveal .slides section .from-b {
+    transform: translateY(50%) rotateX(-65deg) scale(.5);
+}
+
+body .reveal .slides section .from-l,
+body .reveal .slides section .from-r,
+body .reveal .slides section .from-t,
+body .reveal .slides section .from-b {
+    transform-origin: 50% 50% -50px;
+    transition-duration: .5s;
+}
+
+body .reveal .slides section .from-l.visible,
+body .reveal .slides section .from-r.visible,
+body .reveal .slides section .from-t.visible,
+body .reveal .slides section .from-b.visible {
+    transform: translate(0) rotate(0) scale(1);
+}
+
+section.ex,
+div.ex {
+    position: relative;
+    border: 1px dashed #fff;
+}
+
+.ex {
+    text-align: left;
+}
+
+section.ex:after,
+div.ex:after {
+    content: 'EXAMPLE';
+    position: absolute;
+    bottom: 12px;
+    right: -43px;
+    font-size: 25px;
+    background-color: #fff;
+    color: #000;
+    transform: rotate(-45deg) scale(1.4);
+    opacity: 0;
+    transition: all .3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    padding: 0 16px;
+}
+
+section.present.ex:after,
+section.present .ex:after {
+    transform: rotate(-45deg) scale(1);
+    opacity: 1;
+}
+
+.size-l * {
+    font-size: 45px !important;
+}
+
+.deadline {
+    font-size: 5px;
+    transform: translateY(33%);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    color: white;
+    pointer-events: none;
+    opacity: 0;
+    transition: color 13s linear,
+    font-size 13s linear,
+    opacity 2s linear !important;
+}
+
+.deadline.visible {
+    opacity: 1;
+    color: #f00;
+    font-size: 150px;
+}
