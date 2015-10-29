@@ -8,3 +8,4 @@
 1. [HTML, II часть](https://rawgit.com/urfu-2015/verstka-slides/master/02-html-2/index.html) ([Текст лекции](https://github.com/urfu-2015/verstka-lectures/blob/master/html/part-2.md), [Домашнее задание](https://github.com/urfu-2015/verstka-tasks-2))
 1. [CSS](https://rawgit.com/urfu-2015/verstka-slides/master/03-css/index.html)
 1. [Шрифты и текст](https://rawgit.com/urfu-2015/verstka-slides/master/04-fonts-text/index.html)
+1. [Модель отображения. I часть](https://rawgit.com/urfu-2015/verstka-slides/master/05-mo-1/index.html)
