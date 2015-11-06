@@ -9,3 +9,4 @@
 1. [CSS](https://rawgit.com/urfu-2015/verstka-slides/master/03-css/index.html)
 1. [Шрифты и текст](https://rawgit.com/urfu-2015/verstka-slides/master/04-fonts-text/index.html)
 1. [Модель отображения. I часть](https://rawgit.com/urfu-2015/verstka-slides/master/05-mo-1/index.html)
+1. [Модель отображения. II часть](https://rawgit.com/urfu-2015/verstka-slides/master/06-mo-2/index.html)
