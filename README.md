@@ -11,3 +11,4 @@
 1. [Модель отображения. I часть](https://rawgit.com/urfu-2015/verstka-slides/master/05-mo-1/index.html)
 1. [Модель отображения. II часть](https://rawgit.com/urfu-2015/verstka-slides/master/06-mo-2/index.html)
 1. [Модель отображения. III часть](https://rawgit.com/urfu-2015/verstka-slides/master/07-mo-3/index.html)
+1. [Анимации](https://rawgit.com/urfu-2015/verstka-slides/master/08-animation/index.html)
