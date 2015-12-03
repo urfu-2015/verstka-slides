@@ -13,3 +13,4 @@
 1. [Модель отображения. III часть](https://rawgit.com/urfu-2015/verstka-slides/master/07-mo-3/index.html) ([Домашнее задание](https://github.com/urfu-2015/verstka-tasks-7))
 1. [Анимации](https://rawgit.com/urfu-2015/verstka-slides/master/08-animation/index.html) ([Домашнее задание](https://github.com/urfu-2015/verstka-tasks-8))
 1. [Браузер](https://rawgit.com/urfu-2015/verstka-slides/master/09-browser/index.html) ([Домашнее задание](https://github.com/urfu-2015/verstka-tasks-9))
+1. [Графика и Photoshop](https://rawgit.com/urfu-2015/verstka-slides/master/10-graphics/index.html) ([Домашнее задание](https://github.com/urfu-2015/verstka-tasks-10))
