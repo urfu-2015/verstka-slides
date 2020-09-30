@@ -1,4 +1,4 @@
-# Слайды презентаций по вёрстке
+# Слайды презентаций по вёрстке WOW A great file and resources 
 
 [Как работать с GitHub](https://github.com/urfu-2015/guides/blob/master/how-to-pull-request.md)
 
